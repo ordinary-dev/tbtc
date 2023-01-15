@@ -82,14 +82,12 @@ func main() {
 	config, err := GetConfigFromEnv()
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(1)
 	}
 
 	for {
 		err = updateCertificates(config)
 		if err != nil {
 			log.Fatal(err)
-			os.Exit(1)
 		}
 		log.Println("The certificate and key have been updated, sleeping for 3 hours")
 		time.Sleep(3 * time.Hour)
